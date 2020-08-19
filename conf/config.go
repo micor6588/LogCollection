@@ -2,7 +2,7 @@ package conf
 
 type AppConf struct {
 	KafkaConf `ini:"kafka"`
-	TailConf  `ini:"tail"`
+	EtcdConf  `ini:"etcd"`
 }
 
 type KafkaConf struct {
@@ -10,6 +10,8 @@ type KafkaConf struct {
 	Topic   string `ini:"topic"`
 }
 
-type TailConf struct {
-	Filename string `ini:"filename"`
+type EtcdConf struct {
+	Address string `ini:"address"`
+	Timeout int    `ini:"timeout"`
+	Key     string `ini:"collect_log_key"`
 }
